@@ -46,6 +46,7 @@ public class TemperatureConverter {
                 break;
             }
         }
+        temp.showTemperatures();
     }
 
     public void setTemperatureC(double temperatureC) {
@@ -81,19 +82,19 @@ public class TemperatureConverter {
     }
     
     public void convertFToC(){
-        
+        setTemperatureC((((getTemperatureF() - 32) * 5) / 9));
     }
     
     public void convertFToK(){
-        
+        setTemperatureK((((getTemperatureF() + 459.67) * 5) /9));
     }
     
     public void convertKToC(){
-        
+        setTemperatureC(getTemperatureK() - 273.15);
     }
     
     public void convertKToF(){
-        
+        setTemperatureF(((getTemperatureK() * 9) / 5) - 459.67);
     }
     
     public void rounding(){
@@ -121,18 +122,22 @@ public class TemperatureConverter {
     
     public void celsius(){
         System.out.print("Hello! Insert temperature in Celsius: ");
-        temperatureC = input.nextDouble();
+        setTemperatureC(input.nextDouble());
         convertCToF();
         convertCToK();     
-        showTemperatures();
-        
     }
     
     public void fahrenheit(){
-        
+        System.out.print("Hello! Insert temperature in Fahrenheit: ");
+        setTemperatureF(input.nextDouble());
+        convertFToC();
+        convertFToK();     
     }
     
     public void kelvin(){
-        
+        System.out.print("Hello! Insert temperature in Kelvin: ");
+        setTemperatureK(input.nextDouble());
+        convertKToC();
+        convertKToF();     
     }
 }
