@@ -1,4 +1,3 @@
-
 package temperatureconverter;
 
 import java.util.Scanner;
@@ -9,7 +8,7 @@ import java.util.Scanner;
  */
 
 public class TemperatureConverter {
-    private static double temperatureC;
+    private double temperatureC;
     private double temperatureF;
     private double temperatureK;
     private static Scanner input;
